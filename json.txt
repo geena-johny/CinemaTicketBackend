@@ -1,0 +1,205 @@
+USER
+    {
+        "userName":"Abin",
+        "password":"Abin@123",
+        "emailId":"abin@infosys.com",
+        "phoneNumber":"9988776655"
+    }
+MOVIE
+	
+{
+        "movieName":"abc",
+        "language":"English",
+        "director":"xyz",
+        "genre":"Comics"
+
+   }
+
+SHOW
+    {
+        "movieName": "Annabelle",
+        "theatreName": "PVR",
+        "time": "01:00 PM",
+        "seatsAvailable": 200
+   }
+
+
+THEATRE
+    {
+        "theatreName": "Ann Cinema",
+        "location": "Thrissur",
+        "seatingCapacity": 250,
+        "rate": 150
+    }
+
+BOOKING
+{
+       "showDate":"02/02/2020",
+       "seatsBooked":2,
+       "userName":"Jack",
+       "movieName":"Banglore Days",
+       "theatreName":"Ashirvad",
+       "showTime":"11:00 AM"
+}
+
+
+SHOW........
+[
+    {
+        "showId": 2,
+        "movieName": "Banglore Days",
+        "theatreName": "Ashirvad",
+        "time": "11:00 AM",
+        "seatsAvailable": 150
+    },
+    {
+        "showId": 3,
+        "movieName": "DeadPool",
+        "theatreName": "Ashirvad",
+        "time": "02:00 PM",
+        "seatsAvailable": 250
+    },
+    {
+        "showId": 4,
+        "movieName": "C U SOON",
+        "theatreName": "Carnival Cinemas",
+        "time": "02:30 PM",
+        "seatsAvailable": 195
+    },
+    {
+        "showId": 5,
+        "movieName": "Annabelle",
+        "theatreName": "Carnival Cinemas",
+        "time": "09:00 AM",
+        "seatsAvailable": 200
+    },
+    {
+        "showId": 6,
+        "movieName": "The Avengers",
+        "theatreName": "PVR",
+        "time": "08:00 AM",
+        "seatsAvailable": 200
+    },
+    {
+        "showId": 7,
+        "movieName": "The Conjuring",
+        "theatreName": "PVR",
+        "time": "06:00 PM",
+        "seatsAvailable": 200
+    },
+    {
+        "showId": 8,
+        "movieName": "Annabelle",
+        "theatreName": "PVR",
+        "time": "01:00 PM",
+        "seatsAvailable": 196
+    },
+    {
+        "showId": 11,
+        "movieName": "Solo",
+        "theatreName": "EVM Cinemas",
+        "time": "11:30 AM",
+        "seatsAvailable": 300
+    }
+]
+
+MOVIE....
+  
+  [
+    {
+        "movieName": "abc",
+        "director": "xyz",
+        "genre": "Comics",
+        "language": "English"
+    },
+    {
+        "movieName": "Annabelle",
+        "director": "David Sandberg",
+        "genre": "Horror",
+        "language": "English"
+    },
+    {
+        "movieName": "Banglore Days",
+        "director": "Anjali Menon",
+        "genre": "Romance/Drama",
+        "language": "Malayalam"
+    },
+    {
+        "movieName": "C U SOON",
+        "director": "Mahesh Narayanan",
+        "genre": "Romance/Drama",
+        "language": "Malayalam"
+    },
+    {
+        "movieName": "Deadpool",
+        "director": "Tim Miller",
+        "genre": "Action/comedy",
+        "language": "English"
+    },
+    {
+        "movieName": "Solo",
+        "director": "Bejoy Nambiar",
+        "genre": "Romance/Drama",
+        "language": "Malayalam"
+    },
+    {
+        "movieName": "The Avengers",
+        "director": "Joss Whedon",
+        "genre": "Action/Science-fiction",
+        "language": "English"
+    },
+    {
+        "movieName": "The Conjuring",
+        "director": "James Wan",
+        "genre": "Horrror",
+        "language": "English"
+    }
+]
+
+
+THEATRE..
+
+[
+    {
+        "theatreName": "Ann Cinema",
+        "location": "Thrissur",
+        "seatingCapacity": 250,
+        "rate": 150
+    },
+    {
+        "theatreName": "Ashirvad",
+        "location": "Kochi",
+        "seatingCapacity": 300,
+        "rate": 120
+    },
+    {
+        "theatreName": "Carnival Cinemas",
+        "location": "Kozhikode",
+        "seatingCapacity": 250,
+        "rate": 100
+    },
+    {
+        "theatreName": "CinemaPoint",
+        "location": "Kozhikode",
+        "seatingCapacity": 300,
+        "rate": 150
+    },
+    {
+        "theatreName": "EVM Cinemas",
+        "location": "Trivandram",
+        "seatingCapacity": 400,
+        "rate": 140
+    },
+    {
+        "theatreName": "NFC Cinemas",
+        "location": "Kollam",
+        "seatingCapacity": 350,
+        "rate": 155
+    },
+    {
+        "theatreName": "PVR",
+        "location": "Kochi",
+        "seatingCapacity": 200,
+        "rate": 120
+    }
+]
