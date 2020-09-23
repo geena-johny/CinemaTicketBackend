@@ -1,0 +1,19 @@
+eureka:         
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    instance:
+      hostname: localhost
+      leaseRenewalIntervalInSeconds: 1
+      leaseExpirationDurationInSeconds: 2
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5 
+
+
+ribbon:
+  ReadTimeout: 60000
+  connection-timeout: 3000
