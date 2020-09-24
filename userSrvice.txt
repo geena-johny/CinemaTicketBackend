@@ -1,0 +1,110 @@
+*********************userSrvice*********************
+
+package com.example.UserService.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.UserService.model.Login;
+import com.example.UserService.model.User;
+import com.example.UserService.user.UserDAO;
+import com.example.UserService.validator.UserValidator;
+
+@Service
+@Transactional
+public class UserServiceImpl implements UserService {
+	
+	@Autowired
+	UserDAO userDao;
+	
+	@Override	
+	public void authenticateUser(String userName, String password) throws Exception{
+		Login user1=new Login();
+		user1=userDao.authenticateUser(userName,password);
+		if(user1==null) {
+			throw new Exception("Service.INVALID_USERNAME_OR_PASSWORD");
+		}
+	}
+
+	@Override
+	public void addUser(User user) throws Exception{
+		User usr=new User();
+		UserValidator.validateUser(user);
+		usr=userDao.getUser(user.getUserName());
+		if(usr==null) {
+			userDao.addUser(user);
+		}
+		if(usr!=null) {
+			throw new Exception("Service.USER_ALREADY_EXISTS");
+		}
+		
+	}
+	
+	@Override
+	public void updateProfile(User user) throws  Exception {
+		
+		User newUser=null;
+		UserValidator.validateUserForUpdateProfile(user);
+
+		newUser=userDao.getUserByUserName(user.getUserName());
+		if(newUser==null){
+			userDao.updateProfile(newUser);
+		}
+		else{
+			if(newUser.getUserName().equals(user.getUserName()))
+				userDao.updateProfile(user);
+			else
+				throw new Exception("UserService.PHONE_NUMBER_ALREADY_IN_USE");
+		}
+	}
+
+	@Override
+	public void changePassword(String userName, String currentPassword, String newPassword)
+			throws Exception {
+
+		Boolean validPassword = UserValidator.validatePassword(newPassword);
+		if (!validPassword)
+			throw new Exception("UserService.INVALID_NEW_PASSWORD");
+		
+		String passwordFromDB = userDao.getPasswordOfUser(userName);
+		
+		if(!passwordFromDB.equals(currentPassword))
+			throw new Exception("UserService.INVALID_CURRENT_PASSWORD");
+		
+		if(currentPassword.equals(newPassword))
+			throw new Exception("UserService.OLD_PASSWORD_NEW_PASSWORD_SAME");
+		
+		userDao.changePassword(userName, newPassword);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+//    @Override
+//    public List<Show> getShowList() throws Exception{
+//        List<Show> showList =null;
+//        try {
+//            showList = movieDao.getShowList();
+//
+// 
+//
+//            if (showList.isEmpty())
+//                throw new Exception("Service.SHOWS_NOT_FOUND");
+//
+// 
+//
+//        } catch (Exception e) {
+//            throw e;
+//        }
+//        return showList;
+//        
+//    }
+	
+}
